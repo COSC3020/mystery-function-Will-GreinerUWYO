@@ -15,7 +15,7 @@ function mystery(a) {
 This function finds the largest value in a given array, my reasoning is below.
 
 This function takes an input array 'a' and performs the following:
-1. If the array 'a' has one item, it will return that entry as its result.
+1. If the array 'a' has one item, the function will return that entry as its result.
 2. If the array has more than one item, the mystery() function calls itself recursively, but this time, from the second item in the array, a[1] to the end of the array. This is done by the a.slice() method, which creates a new array which begins at the second item a[1] and continues to the end of the array, not overflowing because .slice() does not include the end entry. This will go back to step 1. The eventual result of this recursion will be passed to the foo variable. The foo variable will either be the initial item in the array at that point, or take another slice of the array.
 3. After mystery has run, the first item in the array is compared to foo. If it is greater, it is then returned. If not, a[0] is returned.
 4. Effectively, what this means, is that the largest item in the array is eventually returned. The recursive nature of the function means that it goes to the very end of the array, as the array will only be of a.length() = 1 when there is only one item, which will then be passed backward, each time being compared to the first entry, working its way through the array and determining which is larger. Until eventually, the largest value in the array is returned.

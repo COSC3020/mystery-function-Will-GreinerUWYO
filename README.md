@@ -11,3 +11,4 @@ function mystery(a) {
     else return a[0];
 }
 ```
+
